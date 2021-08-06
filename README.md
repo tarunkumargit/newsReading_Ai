@@ -3,6 +3,7 @@
 ### [Live Site](https://news-reading-ai-pw4hqiwiu-tarunkumar.vercel.app/)
 
 ![React News Application](https://imgur.com/0d2mCel)
+[Imgur](https://imgur.com/0d2mCel)
 
 ### INTRODUCTION
 Conversational Voice Controlled React News Application using Alan AI and News API . 
