@@ -1,6 +1,4 @@
 import { Grid, Grow, Typography } from '@material-ui/core';
-import classNames from 'classnames';
-
 import useStyles from './styles.js';
 import NewsCard from '../NewsCard/NewsCard';
 
@@ -9,19 +7,19 @@ const infoCards = [
   {
     color: "#1565c0",
     title: "News by Categories",
-    info: "Business, Entertainment, General, Health, Science, Sports, Technology",
+    info: "Business, Science, Sports, Technology...",
     text: "Give me the latest Technology news",
   },
   {
     color: "#4527a0",
     title: "News by Terms",
-    info: "Bitcoin, PlayStation 5, Smartphones, Donald Trump...",
-    text: "What's up with PlayStation 5",
+    info: "Bitcoin, PlayStation 5, Smartphones, Coronavirus...",
+    text: "What's up with Coronavirus",
   },
   {
     color: "#283593",
     title: "News by Sources",
-    info: "BBC News, Time, IGN, Wired, CNN, Buzzfeed, ABC News...",
+    info: "BBC News, Buzzfeed, Google News , ABC News, Bloomberg...",
     text: "Give me the news from BBC News",
   },
 ];

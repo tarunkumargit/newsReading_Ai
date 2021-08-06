@@ -1,23 +1,46 @@
+import React, { useState, useEffect, createRef  } from 'react';
 import { Card, CardActions, CardActionArea, CardContent, CardMedia, Button, Typography } from '@material-ui/core';
 import classNames from 'classnames'
 import useStyles from './style.js'
 
 const NewsCard = ({
   article: { description, publishedAt, source, title, url, urlToImage },
-  i,
   activeArticle,
+  i,
 }) => {
   const classes = useStyles();
+  const [elRefs, setElRefs] = useState([]);
+  const scrollToRef = (ref) => window.scroll(0, ref.current.offsetTop - 50);
+
+  useEffect(() => {
+    window.scroll(0, 0);
+
+    setElRefs((refs) =>
+      Array(20)
+        .fill()
+        .map((_, j) => refs[j] || createRef())
+    );
+  }, []);
+
+  useEffect(() => {
+    if (i === activeArticle && elRefs[activeArticle]) {
+      scrollToRef(elRefs[activeArticle]);
+    }
+  }, [i, activeArticle, elRefs]);
 
   return (
-    <Card className={classNames(classes.card, activeArticle === i ? classes.activeCard : null)}>
+    <Card
+      ref={elRefs[i]}
+      className={activeArticle === i ? classes.activeCard : classes.card}
+    >
       <CardActionArea href={url} target="_blank">
         <CardMedia
           className={classes.media}
           image={
             urlToImage ||
-            "https://media.istockphoto.com/photos/news-background-wallpaper-breaking-news-tag-in-the-center-of-banner-picture-id881903844?k=6&m=881903844&s=612x612&w=0&h=HbxI2Uh_utZifCK7KqIBGWG3eby12RLBaFI48K1K-gU="
+            "https://www.industry.gov.au/sites/default/files/August%202018/image/news-placeholder-738.png"
           }
+          title={title}
         />
         <div className={classes.details}>
           <Typography variant="body2" color="textSecondary" component="h2">
@@ -27,7 +50,12 @@ const NewsCard = ({
             {source.name}
           </Typography>
         </div>
-        <Typography className={classes.title} gutterBottom variant="h5">
+        <Typography
+          className={classes.title}
+          gutterBottom
+          variant="h5"
+          component="h2"
+        >
           {title}
         </Typography>
         <CardContent>
@@ -37,10 +65,10 @@ const NewsCard = ({
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.cardActions}>
-        <Button size="small" color="primary">
+        <Button size="small" color="primary" href={url}>
           Learn More
         </Button>
-        <Typography variant="h5" color="textSecondary">
+        <Typography variant="h5" color="textSecondary" component="h2">
           {i + 1}
         </Typography>
       </CardActions>

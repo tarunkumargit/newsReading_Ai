@@ -1,5 +1,6 @@
 {
   "name": "alan_ai",
+  "author": "Tarun",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
