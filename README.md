@@ -10,3 +10,5 @@ Conversational Voice Controlled React News Application using Alan AI and News AP
 
 Setup:
 - run ```npm i && npm start``` to start development server
+
+#### If u liked this project don't forget to give it a ⭐
