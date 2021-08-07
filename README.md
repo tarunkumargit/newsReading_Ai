@@ -1,6 +1,6 @@
 ## Voice Controlled React News Application - Alan AI Voice Assistant
 
-### [Live Site](https://news-reading-ai-pw4hqiwiu-tarunkumar.vercel.app/)
+### [Live Site](https://news-reading-ai.vercel.app/)
 
 ![React News Application](https://imagetourlconverter.com/files/vwppuFwDEN710006.png)
 
